@@ -15,17 +15,20 @@ class CommentResource extends JsonResource
      */
     public function toArray($request)
     {
-        $this->resource->load('post');
+//        $this->resource->load('post');
 
         return $this->resource->map(function ($item) {
-            return [
-                'id' => $item->id,
-                'post_id' => $item->post_id,
-                'commentator_id' => $item->commentator_id,
-                'content' => $item->content,
-                'created_at' => Carbon::parse($item->created_at)->timestamp,
-            ];
+            if (!is_null($item->post->image)) {
+                return [
+                    'id' => $item->id,
+                    'post_id' => $item->post_id,
+                    'commentator_id' => $item->commentator_id,
+                    'content' => $item->content,
+                    'created_at' => Carbon::parse($item->created_at)->timestamp,
+                ];
+            }
         })
+            ->reject(null)
             ->sortByDesc('created_at');
     }
 }
