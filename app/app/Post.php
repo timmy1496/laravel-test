@@ -13,4 +13,9 @@ class Post extends Model
     {
         return $this->hasOne(Image::class, 'id', 'image_id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'post_id', 'id');
+    }
 }

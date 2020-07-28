@@ -16,9 +16,8 @@ class UsersController extends Controller
      */
     public function index(Request $request)
     {
-        $postsLimit = (int) $request->input('posts_limit') ?? false;
 
-        return new UserResource(User::where('active', true)->get(), $postsLimit);
+        return new UserResource(User::where('active', true)->get());
     }
 
     /**
