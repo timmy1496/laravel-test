@@ -1,4 +1,4 @@
-<h4> Project Setup
+<h4> Project Setup</h4>
 
 * get .env file
 * `docker-compose up -d`
