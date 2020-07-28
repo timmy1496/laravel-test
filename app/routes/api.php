@@ -21,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 //Route::apiResource('/users', 'api\UsersController');
 
 Route::get('/users/{posts_limit?}', 'api\UsersController@index');
+
+Route::get('/comment/{user_id}', 'api\CommentController@show');
