@@ -11,3 +11,6 @@
    `sudo chmod -R 777 public/`
    
    `sudo chmod -R 777 storage/`
+   
+The project will be available at http://localhost:8080   
+   
