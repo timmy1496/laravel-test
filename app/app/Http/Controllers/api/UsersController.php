@@ -12,11 +12,13 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return UserResource
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new UserResource(User::all());
+        $postsLimit = (int) $request->input('posts_limit') ?? false;
+
+        return new UserResource(User::where('active', true)->get(), $postsLimit);
     }
 
     /**
@@ -48,7 +50,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        dd(3);
+
     }
 
     /**

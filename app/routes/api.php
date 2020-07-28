@@ -18,5 +18,6 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::apiResource('/users', 'api\UsersController');
+//Route::apiResource('/users', 'api\UsersController');
 
+Route::get('/users/{posts_limit?}', 'api\UsersController@index');
