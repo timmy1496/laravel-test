@@ -12,5 +12,8 @@
    
    `sudo chmod -R 777 storage/`
    
-The project will be available at http://localhost:8080   
+The project will be available at http://localhost:8080
+
+if there are problems with postgre - * `sudo chown 1001:1001 -R ./volumes
+`   
    
