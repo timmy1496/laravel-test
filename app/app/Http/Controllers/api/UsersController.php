@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\UserPostResource;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -12,12 +12,12 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return UserResource
+     * @return UserPostResource
      */
     public function index(Request $request)
     {
 
-        return new UserResource(User::where('active', true)->get());
+        return new UserPostResource(User::where('active', true)->get());
     }
 
     /**
