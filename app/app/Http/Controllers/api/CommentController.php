@@ -67,8 +67,8 @@ class CommentController extends Controller
                         ->where('id', $post->commentator_id)
                         ->where('active', true)
                         ->first(['id', 'name', 'email', 'created_at'])) {
-                        $post->author = $author;
                     }
+                    $post->author = $author ?? null;
                     $comment->post = $post;
                 }
             }
